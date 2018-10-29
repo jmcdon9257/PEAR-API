@@ -2,13 +2,17 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using AutoMapper;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;
 using Microsoft.Extensions.Options;
+using PEARApi.Models;
+using PEARApi.Services;
 
 namespace PEARApi
 {
@@ -25,6 +29,11 @@ namespace PEARApi
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_1);
+            services.AddDbContext<PearDbContext>(options =>
+          options.UseSqlServer("Data Source=localhost\\SQLEXPRESS;Initial Catalog=PEAR;Integrated Security=True;MultipleActiveResultSets=True"));
+            services.AddAutoMapper();
+            services.AddScoped<CustomerService>();
+
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
