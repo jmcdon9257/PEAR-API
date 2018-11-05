@@ -13,6 +13,7 @@ namespace PEARApi
         public DomainProfile()
         {
             CreateMap<CustomerViewModel, Customer>().ReverseMap();
+            CreateMap<DeviceViewModel, Device>().ReverseMap();
         }
       
     }

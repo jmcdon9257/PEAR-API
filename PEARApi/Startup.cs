@@ -33,6 +33,7 @@ namespace PEARApi
           options.UseSqlServer("Data Source=localhost\\SQLEXPRESS;Initial Catalog=PEAR;Integrated Security=True;MultipleActiveResultSets=True"));
             services.AddAutoMapper();
             services.AddScoped<CustomerService>();
+            services.AddScoped<DeviceService>();
 
         }
 

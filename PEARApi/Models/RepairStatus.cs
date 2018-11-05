@@ -7,20 +7,15 @@ using System.Threading.Tasks;
 
 namespace PEARApi.Models
 {
-    public class Customer
+    public class RepairStatus
     {
         [Key]
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
-        public int CustomerID { get; set; }
-        public string FirstName { get; set; }
-        public string LastName { get; set; }
-        public string PhoneNumber { get; set; }
+        public int StatusID { get; set; }
+        public string StatusDescription { get; set; }
         public DateTime CreatedDate { get; set; }
         public DateTime? ModifiedDate { get; set; }
-        public bool CustomerStatus { get; set; }
 
         public virtual List<Repair> Repair { get; set; }
-
-        
     }
 }

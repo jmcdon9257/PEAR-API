@@ -13,5 +13,10 @@ namespace PEARApi.Models
             : base(options) { }
 
         public DbSet<Customer> Customer { get; set; }
+
+        public DbSet<Device> Device { get; set; }
+        public DbSet<Repair> Repair { get; set; }
+        public DbSet<RepairStatus> RepairStatus { get; set; }
+
     }
 }

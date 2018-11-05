@@ -51,6 +51,10 @@ namespace PEARApi.Controllers
         [HttpPost]
         public async Task<ActionResult<CustomerViewModel>> AddCustomer([FromBody]CustomerViewModel customerViewModel)
         {
+            if(!ModelState.IsValid)
+            {
+                return BadRequest(ModelState);
+            }
             var customer = new Customer
             {
                 FirstName = customerViewModel.FirstName,
