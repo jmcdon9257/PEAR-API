@@ -11,6 +11,7 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;
 using Microsoft.Extensions.Options;
+using PEARApi.Middleware;
 using PEARApi.Models;
 using PEARApi.Services;
 
@@ -34,6 +35,7 @@ namespace PEARApi
             services.AddAutoMapper();
             services.AddScoped<CustomerService>();
             services.AddScoped<DeviceService>();
+            services.AddScoped<RepairService>();
 
         }
 
@@ -44,7 +46,7 @@ namespace PEARApi
             {
                 app.UseDeveloperExceptionPage();
             }
-
+            //app.UseMiddleware(typeof(ErrorHandlingMiddleWare));
             app.UseMvc();
         }
     }
