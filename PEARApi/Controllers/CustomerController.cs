@@ -49,7 +49,7 @@ namespace PEARApi.Controllers
         // POST api/<controller>
       
         [HttpPost]
-        public async Task<ActionResult<CustomerViewModel>> AddCustomer([FromBody]CustomerViewModel customerViewModel)
+        public async Task<ActionResult<CustomerViewModel>> AddCustomerAsync([FromBody]CustomerViewModel customerViewModel)
         {
             if(!ModelState.IsValid)
             {

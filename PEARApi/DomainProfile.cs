@@ -14,6 +14,7 @@ namespace PEARApi
         {
             CreateMap<CustomerViewModel, Customer>().ReverseMap();
             CreateMap<DeviceViewModel, Device>().ReverseMap();
+            CreateMap<RepairViewModel, Repair>().ReverseMap();
         }
       
     }
